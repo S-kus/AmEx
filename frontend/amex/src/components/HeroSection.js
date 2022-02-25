@@ -1,62 +1,33 @@
 import React from 'react';
 import './HeroSection.css';
-import { Button } from './Button';
-import { Link } from 'react-router-dom';
 
 function HeroSection({
-  lightBg,
-  topLine,
-  lightText,
-  lightTextDesc,
-  headline,
-  description,
-  buttonLabel,
-  img,
-  alt,
-  imgStart
 }) {
   return (
     <>
+      <div>
       <div
-        className={lightBg ? 'home__hero-section' : 'home__hero-section darkBg'}
+        className='hero'
       >
-        <div className='container'>
-          <div
-            className='row home__hero-row'
-            style={{
-              display: 'flex',
-              flexDirection: imgStart === 'start' ? 'row-reverse' : 'row'
-            }}
-          >
-            <div className='col'>
-              <div className='home__hero-text-wrapper'>
-                <div className='top-line'>{topLine}</div>
-                <h1 className={lightText ? 'heading' : 'heading dark'}>
-                  {headline}
-                </h1>
-                <p
-                  className={
-                    lightTextDesc
-                      ? 'home__hero-subtitle'
-                      : 'home__hero-subtitle dark'
-                  }
-                >
-                  {description}
-                </p>
-                <Link to='/sign-up'>
-                  <Button buttonSize='btn--wide' buttonColor='blue'>
-                    {buttonLabel}
-                  </Button>
-                </Link>
-              </div>
-            </div>
-            <div className='col'>
-              <div className='home__hero-img-wrapper'>
-                <img src={img} alt={alt} className='home__hero-img' />
-              </div>
-            </div>
+        <div className='overlay'>
+          <div className='content'>
+            <h2><span>Who</span><br/>We are?</h2>
+            <h3>With you we aim to create<br/>an inclusive space in Fintech</h3>
           </div>
         </div>
+      </div>
+      </div>
+      <div className='home'>
+        <div className='image'>
+          <img src='/images/home.jpeg'></img>
+        </div>
+        <div className='moto'>
+          <p>We bring together people from all walks of life to<br/> become a part of a revolution.</p>
+        </div>
+      </div>
+      <div className='team'>
+        <h3>Great team is the key!</h3>
+        <h4>Minimal will provide you support if you have any problems, our support team will<br/> reply within a day and we also have detailed documentation.</h4>
       </div>
     </>
   );
